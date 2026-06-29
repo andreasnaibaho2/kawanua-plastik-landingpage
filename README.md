@@ -63,9 +63,13 @@ Before deploying, update the following in `index.html`:
 
 ## 📸 Screenshots
 
-> *(Add a screenshot here after deployment)*
->
-> `![Landing Page Preview](screenshot.png)`
+| Section | Preview |
+|---------|---------|
+| **Hero** | <img width="1901" alt="Hero — Solusi Kebutuhan Plastik Anda" src="https://github.com/user-attachments/assets/079732d4-7980-456c-8ff2-378083585291" /> |
+| **Products** | <img width="1895" alt="Produk Plastik — 6 Kategori" src="https://github.com/user-attachments/assets/c7054ecb-a6f7-4d60-b23a-1d44110abd46" /> |
+| **Keunggulan** | <img width="1902" alt="Mitra Terpercaya — Keunggulan" src="https://github.com/user-attachments/assets/f42041b0-45bf-4eaa-9319-1fb2cdb28f83" /> |
+| **About** | <img width="1917" alt="Tentang CV. Kawanua Plastik" src="https://github.com/user-attachments/assets/d531a7bb-99b3-4eee-984a-28c6643b3d3e" /> |
+| **Contact** | <img width="1918" alt="Form Kontak via WhatsApp" src="https://github.com/user-attachments/assets/2c2bda3a-9baf-4892-9adf-64d967bfc933" /> |
 
 ## 🏢 About the Project
 
