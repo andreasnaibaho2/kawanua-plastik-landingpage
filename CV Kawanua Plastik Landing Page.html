@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV. Kawanua Plastik — Supplier Plastik Sukabumi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#18181B;--cream:#F7F3EC;--orange:#E8520A;--orange-h:#C94308;--orange-soft:rgba(232,82,10,.08);
+  --green:#1E3A2F;--green-l:#2D5240;--muted:#C4B9A8;--white:#FFFFFF;
+  --gray:#6B7280;--light:#FAFAF9;--border:rgba(196,185,168,.35);
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--ink);font-size:16px;line-height:1.6;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:.9rem 5vw;background:rgba(247,243,236,0.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:'Playfair Display',serif;font-weight:900;font-size:1.05rem;color:var(--ink);letter-spacing:-.02em;text-decoration:none;display:flex;align-items:center;gap:8px}
+.nav-logo-dot{width:7px;height:7px;background:var(--orange);border-radius:50%}
+.nav-links{display:flex;align-items:center;gap:2rem}
+.nav-links a{font-size:.78rem;font-weight:500;color:var(--gray);text-decoration:none;letter-spacing:.04em;transition:color .2s}
+.nav-links a:hover{color:var(--ink)}
+.nav-cta{background:var(--orange)!important;color:var(--white)!important;padding:.48rem 1.3rem;border-radius:5px;font-size:.78rem;font-weight:600;transition:background .2s!important}
+.nav-cta:hover{background:var(--orange-h)!important}
+
+/* HERO */
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;align-items:center;padding:8rem 5vw 5rem;gap:4rem;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background-image:radial-gradient(circle at 68% 42%, rgba(232,82,10,.07) 0%,transparent 55%),linear-gradient(rgba(196,185,168,.18) 1px,transparent 1px),linear-gradient(90deg,rgba(196,185,168,.18) 1px,transparent 1px);background-size:100% 100%,52px 52px,52px 52px;pointer-events:none;z-index:0}
+.hero-content{position:relative;z-index:1}
+.hero-eyebrow{font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);margin-bottom:1.5rem;display:flex;align-items:center;gap:.6rem}
+.hero-eyebrow::before{content:'';width:22px;height:2px;background:var(--orange);border-radius:2px}
+.hero-headline{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(2.6rem,4.8vw,5rem);line-height:.95;letter-spacing:-.03em;margin-bottom:1.8rem}
+.hero-headline em{font-style:italic;color:var(--orange)}
+.hero-sub{font-size:.95rem;color:var(--gray);max-width:440px;line-height:1.8;margin-bottom:2.4rem}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;align-items:center}
+.btn-primary{background:var(--ink);color:var(--white);padding:.85rem 2rem;font-size:.82rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;text-decoration:none;border-radius:5px;transition:background .2s,transform .15s;display:inline-flex;align-items:center;gap:.5rem}
+.btn-primary:hover{background:var(--orange);transform:translateY(-2px)}
+.btn-secondary{border:1.5px solid rgba(24,24,27,.2);color:var(--ink);padding:.85rem 2rem;font-size:.82rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;text-decoration:none;border-radius:5px;transition:all .2s;display:inline-flex;align-items:center;gap:.5rem}
+.btn-secondary:hover{border-color:var(--orange);color:var(--orange);transform:translateY(-2px)}
+.hero-visual{position:relative;z-index:1;display:flex;justify-content:center;align-items:center}
+.hero-card{background:var(--white);border-radius:20px;padding:1.8rem;border:1px solid var(--border);box-shadow:0 24px 64px rgba(0,0,0,.08),0 4px 16px rgba(0,0,0,.04)}
+.hero-card-inner{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+.mini-prod{background:var(--cream);border-radius:12px;padding:1rem;text-align:center;display:flex;flex-direction:column;align-items:center;gap:.5rem;transition:background .2s}
+.mini-prod:hover{background:#EFE9DF}
+.mini-prod svg{display:block}
+.mini-prod-name{font-size:.7rem;font-weight:600;color:var(--ink);letter-spacing:.01em}
+.hero-rating{margin-top:1.2rem;display:flex;align-items:center;justify-content:space-between;padding-top:1.1rem;border-top:1px solid var(--border)}
+.rating-stars{color:#F59E0B;font-size:.85rem;letter-spacing:2px}
+.rating-text{font-size:.72rem;color:var(--gray);margin-top:.1rem}
+.rating-num{font-family:'Playfair Display',serif;font-weight:900;font-size:1.4rem;color:var(--ink)}
+
+/* STATS */
+.stats{background:var(--ink);color:var(--white);padding:2.2rem 5vw;display:flex}
+.stat-item{flex:1;padding:0 2rem;border-right:1px solid rgba(255,255,255,.08);text-align:center}
+.stat-item:first-child{padding-left:0}
+.stat-item:last-child{border-right:none}
+.stat-num{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.5rem);font-weight:900;color:var(--orange);line-height:1}
+.stat-lbl{font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-top:.4rem}
+
+/* SECTIONS */
+section{padding:6rem 5vw}
+.s-eyebrow{font-size:.65rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);margin-bottom:.75rem;display:flex;align-items:center;gap:.6rem}
+.s-eyebrow::before{content:'';width:18px;height:2px;background:var(--orange);border-radius:2px}
+.s-title{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3.2vw,2.6rem);font-weight:700;line-height:1.15;letter-spacing:-.025em;max-width:560px}
+.s-title em{font-style:italic;color:var(--orange)}
+
+/* PRODUK */
+#produk{background:var(--white)}
+.produk-header{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:3rem;gap:2rem;flex-wrap:wrap}
+.produk-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem}
+.produk-card{background:var(--cream);border-radius:14px;overflow:hidden;transition:transform .25s,box-shadow .25s;border:1px solid var(--border)}
+.produk-card:hover{transform:translateY(-5px);box-shadow:0 20px 48px rgba(0,0,0,.1)}
+.produk-img{width:100%;height:180px;display:flex;align-items:center;justify-content:center;background:var(--white);border-bottom:1px solid rgba(196,185,168,.15);overflow:hidden;padding:1rem}
+.produk-img svg{width:100%;height:100%}
+.produk-body{padding:1.4rem 1.5rem 1.6rem}
+.produk-tag{display:inline-flex;align-items:center;gap:.3rem;font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--green-l);background:rgba(45,82,64,.09);border-radius:4px;padding:.25rem .65rem;margin-bottom:.75rem}
+.produk-name{font-family:'Playfair Display',serif;font-size:1.1rem;font-weight:700;margin-bottom:.4rem;letter-spacing:-.01em}
+.produk-desc{font-size:.82rem;color:var(--gray);line-height:1.65}
+
+/* KEUNGGULAN */
+#keunggulan{background:var(--cream)}
+.keung-layout{display:grid;grid-template-columns:1fr 1fr;gap:4.5rem;align-items:start}
+.keung-list{display:flex;flex-direction:column;gap:1rem;margin-top:2.5rem}
+.keung-item{display:flex;gap:1.1rem;align-items:flex-start;padding:1.3rem 1.4rem;background:var(--white);border-radius:12px;border:1px solid var(--border);transition:border-color .2s,transform .2s}
+.keung-item:hover{border-color:rgba(232,82,10,.3);transform:translateX(4px)}
+.keung-icon{width:38px;height:38px;background:var(--orange-soft);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.keung-icon svg{width:18px;height:18px;stroke:var(--orange);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.keung-text h3{font-weight:600;font-size:.88rem;margin-bottom:.2rem;color:var(--ink)}
+.keung-text p{font-size:.79rem;color:var(--gray);line-height:1.6}
+.keung-visual{background:var(--green);border-radius:18px;padding:2.8rem;color:var(--white);position:sticky;top:7rem}
+.keung-visual-title{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:700;margin-bottom:.5rem;line-height:1.2}
+.keung-visual-sub{font-size:.82rem;color:rgba(255,255,255,.55);margin-bottom:2rem;line-height:1.65}
+.keung-stat{display:flex;align-items:center;gap:1rem;padding:1rem 0;border-bottom:1px solid rgba(255,255,255,.1)}
+.keung-stat:last-child{border-bottom:none}
+.keung-stat-num{font-family:'Playfair Display',serif;font-size:2.1rem;font-weight:900;color:var(--orange);min-width:70px}
+.keung-stat-lbl{font-size:.79rem;color:rgba(255,255,255,.65);line-height:1.45}
+
+/* TENTANG */
+#tentang{background:var(--ink);color:var(--white)}
+#tentang .s-eyebrow{color:rgba(255,255,255,.35)}
+#tentang .s-eyebrow::before{background:rgba(255,255,255,.25)}
+#tentang .s-title{color:var(--white);max-width:700px}
+.tentang-layout{display:grid;grid-template-columns:1fr 1fr;gap:5rem;margin-top:3rem;align-items:start}
+.tentang-body{font-size:.93rem;line-height:1.85;color:rgba(255,255,255,.6)}
+.tentang-body strong{color:var(--white)}
+.tentang-detail{display:flex;flex-direction:column;gap:1rem}
+.tentang-row{display:flex;gap:1rem;align-items:flex-start;padding:1rem;background:rgba(255,255,255,.04);border-radius:10px;border:1px solid rgba(255,255,255,.06)}
+.tentang-row-icon{width:34px;height:34px;background:rgba(255,255,255,.07);border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.tentang-row-icon svg{width:15px;height:15px;stroke:rgba(255,255,255,.5);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.tentang-row-label{font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:.2rem}
+.tentang-row-val{font-size:.86rem;color:var(--white)}
+
+/* KONTAK */
+#kontak{background:var(--cream)}
+.kontak-layout{display:grid;grid-template-columns:1fr 1fr;gap:5rem;margin-top:3rem}
+.kontak-info-sub{font-size:.9rem;color:var(--gray);line-height:1.75;margin:1.2rem 0 2rem}
+.kontak-det{display:flex;flex-direction:column;gap:.9rem}
+.kontak-det-item{display:flex;gap:1rem;align-items:flex-start}
+.kontak-det-icon{width:38px;height:38px;background:var(--white);border:1px solid var(--border);border-radius:9px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.kontak-det-icon svg{width:15px;height:15px;stroke:var(--orange);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.kontak-det-label{font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gray);margin-bottom:.2rem}
+.kontak-det-val{font-size:.86rem;color:var(--ink)}
+.kontak-det-val a{color:var(--ink);text-decoration:underline}
+.kontak-form-box{background:var(--white);border-radius:16px;padding:2.2rem;border:1px solid var(--border);box-shadow:0 4px 24px rgba(0,0,0,.04)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.form-group{display:flex;flex-direction:column;gap:.4rem;margin-bottom:.9rem}
+.form-group label{font-size:.65rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--gray)}
+.form-group input,.form-group textarea,.form-group select{background:var(--cream);border:1.5px solid rgba(196,185,168,.5);color:var(--ink);padding:.7rem .95rem;font-family:'Inter',sans-serif;font-size:.86rem;border-radius:7px;outline:none;transition:border-color .2s;width:100%}
+.form-group input:focus,.form-group textarea:focus,.form-group select:focus{border-color:var(--orange);background:var(--white)}
+.form-group textarea{resize:vertical;min-height:110px}
+.form-group select option{background:var(--white)}
+.btn-submit{background:var(--orange);color:var(--white);border:none;padding:.9rem 2rem;font-family:'Inter',sans-serif;font-size:.82rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;border-radius:5px;cursor:pointer;transition:background .2s,transform .15s;width:100%;margin-top:.4rem}
+.btn-submit:hover{background:var(--orange-h);transform:translateY(-2px)}
+
+/* FOOTER */
+footer{background:#0D0D0B;color:rgba(255,255,255,.35);padding:2rem 5vw;display:flex;align-items:center;justify-content:space-between;font-size:.73rem;flex-wrap:wrap;gap:1rem}
+footer a{color:rgba(255,255,255,.35);text-decoration:none;transition:color .2s}
+footer a:hover{color:var(--orange)}
+.footer-logo{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:900;color:var(--white)}
+.footer-logo span{color:var(--orange)}
+
+/* RESPONSIVE */
+@media(max-width:960px){
+  .produk-grid{grid-template-columns:repeat(2,1fr)}
+  .hero{grid-template-columns:1fr}
+  .hero-visual{display:none}
+  .keung-layout{grid-template-columns:1fr}
+  .keung-visual{position:static}
+  .tentang-layout{grid-template-columns:1fr;gap:3rem}
+  .kontak-layout{grid-template-columns:1fr;gap:3rem}
+}
+@media(max-width:640px){
+  .nav-links{display:none}
+  .stats{flex-direction:column;gap:0}
+  .stat-item{border-right:none;border-bottom:1px solid rgba(255,255,255,.08);padding:1rem 0}
+  .stat-item:last-child{border-bottom:none}
+  .produk-grid{grid-template-columns:1fr}
+  .form-row{grid-template-columns:1fr}
+  section{padding:4rem 5vw}
+}
+
+/* FADE IN */
+.fi{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+.fi.vis{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.fi{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#"><span class="nav-logo-dot"></span>CV. Kawanua Plastik</a>
+  <div class="nav-links">
+    <a href="#produk">Produk</a>
+    <a href="#keunggulan">Keunggulan</a>
+    <a href="#tentang">Tentang</a>
+    <a href="#kontak" class="nav-cta">Hubungi Kami</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="beranda">
+  <div class="hero-content">
+    <p class="hero-eyebrow">Supplier & Grosir Plastik · Sukabumi</p>
+    <h1 class="hero-headline">
+      Solusi<br>Kebutuhan<br><em>Plastik</em><br>Anda.
+    </h1>
+    <p class="hero-sub">Menyediakan plastik kemasan, foil, polybag, mika, gelas plastik, dan perlengkapan plastik lainnya — untuk usaha makanan, industri kecil, dan grosir di Sukabumi.</p>
+    <div class="hero-actions">
+      <a href="#produk" class="btn-primary">Lihat Produk &rarr;</a>
+      <a href="#kontak" class="btn-secondary">Minta Penawaran</a>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hero-card">
+      <div class="hero-card-inner">
+        <div class="mini-prod">
+          <svg width="60" height="60" viewBox="0 0 64 64" fill="none">
+            <rect x="14" y="10" width="36" height="44" rx="4" fill="#E8F4FD" stroke="#93C5E8" stroke-width="1.5"/>
+            <rect x="20" y="6" width="24" height="8" rx="3" fill="#A8D4F5" stroke="#93C5E8" stroke-width="1.5"/>
+            <line x1="20" y1="24" x2="44" y2="24" stroke="#93C5E8" stroke-width="1" stroke-dasharray="3 2"/>
+            <line x1="20" y1="32" x2="44" y2="32" stroke="#93C5E8" stroke-width="1" stroke-dasharray="3 2"/>
+            <rect x="22" y="38" width="20" height="8" rx="2" fill="#C3DFF5"/>
+          </svg>
+          <span class="mini-prod-name">Plastik Kemasan</span>
+        </div>
+        <div class="mini-prod">
+          <svg width="60" height="60" viewBox="0 0 64 64" fill="none">
+            <path d="M16 18 Q16 12 32 12 Q48 12 48 18 L46 50 Q46 54 32 54 Q18 54 18 50 Z" fill="#E8E8E8" stroke="#A0A0A0" stroke-width="1.5"/>
+            <path d="M18 18 Q18 14 32 14 Q46 14 46 18" stroke="#C0C0C0" stroke-width="2" fill="none"/>
+            <rect x="24" y="30" width="16" height="14" rx="2" fill="rgba(232,82,10,.12)" stroke="#E8520A" stroke-width="1"/>
+          </svg>
+          <span class="mini-prod-name">Foil & Pouch</span>
+        </div>
+        <div class="mini-prod">
+          <svg width="60" height="60" viewBox="0 0 64 64" fill="none">
+            <path d="M20 18 L22 52 Q22 54 32 54 Q42 54 42 52 L44 18 Z" fill="#E8F4FD" stroke="#93C5E8" stroke-width="1.5"/>
+            <path d="M18 16 Q18 14 32 14 Q46 14 46 16 L44 18 L20 18 Z" fill="#C3DFF5" stroke="#93C5E8" stroke-width="1.5"/>
+            <line x1="23" y1="30" x2="41" y2="30" stroke="#93C5E8" stroke-width="1" stroke-dasharray="3 2"/>
+          </svg>
+          <span class="mini-prod-name">Gelas Plastik</span>
+        </div>
+        <div class="mini-prod">
+          <svg width="60" height="60" viewBox="0 0 64 64" fill="none">
+            <path d="M18 20 Q18 14 32 14 Q46 14 46 20 L44 52 Q44 56 32 56 Q20 56 20 52 Z" fill="#F5F0E0" stroke="#C4A84A" stroke-width="1.5"/>
+            <line x1="22" y1="20" x2="42" y2="20" stroke="#C4A84A" stroke-width=".8" opacity=".6"/>
+            <line x1="20" y1="30" x2="44" y2="30" stroke="#C4A84A" stroke-width=".8" opacity=".5"/>
+            <path d="M26 14 Q26 10 32 10 Q38 10 38 14" stroke="#C4A84A" stroke-width="1.5" fill="none" stroke-linecap="round"/>
+          </svg>
+          <span class="mini-prod-name">Karung & Polybag</span>
+        </div>
+      </div>
+      <div class="hero-rating">
+        <div>
+          <div class="rating-num">4.6</div>
+          <div class="rating-text">Rating pelanggan</div>
+        </div>
+        <div style="text-align:right">
+          <div class="rating-stars">★★★★★</div>
+          <div class="rating-text">Puluhan ulasan</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats">
+  <div class="stat-item"><div class="stat-num">4.6</div><div class="stat-lbl">Rating Google</div></div>
+  <div class="stat-item"><div class="stat-num">6+</div><div class="stat-lbl">Kategori Produk</div></div>
+  <div class="stat-item"><div class="stat-num">Grosir</div><div class="stat-lbl">& Eceran</div></div>
+  <div class="stat-item"><div class="stat-num">Skb</div><div class="stat-lbl">Lokal Sukabumi</div></div>
+</div>
+
+<!-- PRODUK -->
+<section id="produk">
+  <div class="produk-header">
+    <div>
+      <p class="s-eyebrow fi">Apa yang kami sediakan</p>
+      <h2 class="s-title fi">Produk <em>Plastik</em> untuk Setiap Kebutuhan</h2>
+    </div>
+    <a href="#kontak" class="btn-secondary fi" style="white-space:nowrap;align-self:flex-end">Tanya Ketersediaan &rarr;</a>
+  </div>
+
+  <div class="produk-grid">
+
+    <!-- 1. Plastik Kemasan -->
+    <div class="produk-card fi">
+      <div class="produk-img">
+        <svg viewBox="0 0 300 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="55" y="28" width="72" height="112" rx="7" fill="#D6EEFF" stroke="#7AB8E8" stroke-width="1.5"/>
+          <rect x="74" y="18" width="34" height="18" rx="5" fill="#A8D4F5" stroke="#7AB8E8" stroke-width="1.5"/>
+          <line x1="67" y1="55" x2="119" y2="55" stroke="#7AB8E8" stroke-width="1" stroke-dasharray="4 3" opacity=".7"/>
+          <line x1="67" y1="72" x2="119" y2="72" stroke="#7AB8E8" stroke-width="1" stroke-dasharray="4 3" opacity=".6"/>
+          <rect x="70" y="84" width="42" height="30" rx="4" fill="#A8D4F5" opacity=".45"/>
+          <rect x="152" y="38" width="88" height="104" rx="7" fill="#EBF5FF" stroke="#7AB8E8" stroke-width="1.5"/>
+          <rect x="170" y="26" width="52" height="20" rx="5" fill="#C3DFF5" stroke="#7AB8E8" stroke-width="1.5"/>
+          <line x1="162" y1="68" x2="230" y2="68" stroke="#7AB8E8" stroke-width="1" stroke-dasharray="4 3" opacity=".6"/>
+          <rect x="166" y="82" width="58" height="38" rx="4" fill="#A8D4F5" opacity=".35"/>
+          <text x="177" y="106" font-size="10" fill="#5B9FD4" font-family="Inter,sans-serif" font-weight="600">PLASTIK</text>
+          <line x1="62" y1="30" x2="66" y2="140" stroke="white" stroke-width="5" opacity=".35" stroke-linecap="round"/>
+          <line x1="157" y1="40" x2="160" y2="138" stroke="white" stroke-width="5" opacity=".3" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="produk-body">
+        <span class="produk-tag">✦ Stok Tersedia</span>
+        <div class="produk-name">Plastik Kemasan</div>
+        <p class="produk-desc">Berbagai jenis plastik kemasan untuk usaha makanan, minuman, dan produk konsumer — tersedia dalam berbagai ukuran dan ketebalan.</p>
+      </div>
+    </div>
+
+    <!-- 2. Foil & Pouch -->
+    <div class="produk-card fi">
+      <div class="produk-img">
+        <svg viewBox="0 0 300 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M75 48 Q75 34 118 34 Q161 34 161 48 L157 148 Q157 156 118 156 Q79 156 79 148 Z" fill="#D8D8D8" stroke="#A0A0A0" stroke-width="1.5"/>
+          <path d="M79 50 Q79 38 118 38 Q157 38 157 50" fill="#C0C0C0" stroke="#A0A0A0" stroke-width="1"/>
+          <rect x="92" y="70" width="52" height="52" rx="5" fill="rgba(232,82,10,.1)" stroke="#E8520A" stroke-width="1.2"/>
+          <line x1="102" y1="84" x2="134" y2="84" stroke="#E8520A" stroke-width="1.3"/>
+          <line x1="102" y1="96" x2="134" y2="96" stroke="#E8520A" stroke-width=".9" opacity=".6"/>
+          <line x1="102" y1="106" x2="122" y2="106" stroke="#E8520A" stroke-width=".9" opacity=".5"/>
+          <line x1="84" y1="48" x2="86" y2="148" stroke="white" stroke-width="4" opacity=".3" stroke-linecap="round"/>
+          <rect x="178" y="44" width="88" height="94" rx="6" fill="#E8E8E8" stroke="#B0B0B0" stroke-width="1.5"/>
+          <rect x="186" y="52" width="72" height="78" rx="4" fill="#F0F0F0" stroke="#C8C8C8" stroke-width="1"/>
+          <line x1="186" y1="72" x2="258" y2="72" stroke="#D0D0D0" stroke-width="1"/>
+          <line x1="186" y1="90" x2="258" y2="90" stroke="#D0D0D0" stroke-width="1"/>
+          <line x1="186" y1="108" x2="258" y2="108" stroke="#D0D0D0" stroke-width="1"/>
+          <rect x="192" y="56" width="60" height="10" rx="2" fill="#C8C8C8" opacity=".5"/>
+          <line x1="182" y1="49" x2="182" y2="132" stroke="white" stroke-width="3" opacity=".28"/>
+        </svg>
+      </div>
+      <div class="produk-body">
+        <span class="produk-tag">✦ Grosir & Eceran</span>
+        <div class="produk-name">Foil & Pouch</div>
+        <p class="produk-desc">Foil aluminium dan standing pouch untuk pengemasan produk kopi, snack, dan makanan — menjaga kesegaran produk lebih lama.</p>
+      </div>
+    </div>
+
+    <!-- 3. Gelas Plastik -->
+    <div class="produk-card fi">
+      <div class="produk-img">
+        <svg viewBox="0 0 300 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Cup back -->
+          <path d="M162 38 L172 150 Q172 157 194 157 Q216 157 216 150 L226 38 Z" fill="#C3DFF5" stroke="#7AB8E8" stroke-width="1.2" opacity=".55"/>
+          <ellipse cx="194" cy="38" rx="32" ry="5" fill="#A8D4F5" opacity=".55"/>
+          <!-- Cup mid -->
+          <path d="M94 30 L106 148 Q106 157 132 157 Q158 157 158 148 L170 30 Z" fill="#D6EEFF" stroke="#7AB8E8" stroke-width="1.4" opacity=".8"/>
+          <ellipse cx="132" cy="30" rx="38" ry="6.5" fill="#B8D8F0"/>
+          <!-- Cup front -->
+          <path d="M68 24 L82 148 Q82 158 114 158 Q146 158 146 148 L160 24 Z" fill="#EBF5FF" stroke="#7AB8E8" stroke-width="1.8"/>
+          <ellipse cx="114" cy="24" rx="46" ry="7.5" fill="#C3DFF5"/>
+          <ellipse cx="114" cy="24" rx="46" ry="7.5" fill="white" opacity=".35"/>
+          <path d="M84 78 Q114 72 144 78" stroke="#7AB8E8" stroke-width="1" stroke-dasharray="4 3"/>
+          <line x1="78" y1="34" x2="82" y2="148" stroke="white" stroke-width="5" opacity=".32" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="produk-body">
+        <span class="produk-tag">✦ Stok Tersedia</span>
+        <div class="produk-name">Gelas Plastik</div>
+        <p class="produk-desc">Gelas plastik PP dan PET berbagai ukuran untuk usaha minuman, katering, dan kebutuhan acara — tersedia partai besar maupun kecil.</p>
+      </div>
+    </div>
+
+    <!-- 4. Karung & Polybag -->
+    <div class="produk-card fi">
+      <div class="produk-img">
+        <svg viewBox="0 0 300 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Karung -->
+          <path d="M44 50 Q44 34 116 34 Q188 34 188 50 L182 150 Q182 160 116 160 Q50 160 50 150 Z" fill="#F0EBD4" stroke="#C4A84A" stroke-width="1.8"/>
+          <line x1="56" y1="50" x2="56" y2="150" stroke="#C4A84A" stroke-width=".7" opacity=".4"/>
+          <line x1="76" y1="48" x2="72" y2="152" stroke="#C4A84A" stroke-width=".7" opacity=".4"/>
+          <line x1="96" y1="46" x2="94" y2="154" stroke="#C4A84A" stroke-width=".7" opacity=".4"/>
+          <line x1="116" y1="44" x2="116" y2="156" stroke="#C4A84A" stroke-width=".7" opacity=".4"/>
+          <line x1="136" y1="46" x2="138" y2="154" stroke="#C4A84A" stroke-width=".7" opacity=".4"/>
+          <line x1="156" y1="48" x2="160" y2="152" stroke="#C4A84A" stroke-width=".7" opacity=".4"/>
+          <line x1="176" y1="50" x2="176" y2="150" stroke="#C4A84A" stroke-width=".7" opacity=".4"/>
+          <line x1="52" y1="68" x2="180" y2="64" stroke="#C4A84A" stroke-width=".7" opacity=".4"/>
+          <line x1="50" y1="86" x2="182" y2="84" stroke="#C4A84A" stroke-width=".7" opacity=".4"/>
+          <line x1="50" y1="104" x2="182" y2="104" stroke="#C4A84A" stroke-width=".7" opacity=".4"/>
+          <line x1="52" y1="122" x2="180" y2="124" stroke="#C4A84A" stroke-width=".7" opacity=".4"/>
+          <path d="M92 34 Q92 24 116 22 Q140 24 140 34" stroke="#A08030" stroke-width="2" fill="none" stroke-linecap="round"/>
+          <line x1="116" y1="22" x2="116" y2="14" stroke="#A08030" stroke-width="2" stroke-linecap="round"/>
+          <!-- Polybag -->
+          <path d="M205 58 Q205 48 232 48 Q259 48 259 58 L256 150 Q256 157 232 157 Q208 157 208 150 Z" fill="#E0F0FF" stroke="#8AB8DC" stroke-width="1.5"/>
+          <path d="M211 60 Q211 52 232 52 Q253 52 253 60" stroke="#8AB8DC" stroke-width="1" fill="none"/>
+          <line x1="211" y1="80" x2="253" y2="80" stroke="#8AB8DC" stroke-width=".8" stroke-dasharray="3 2" opacity=".5"/>
+          <line x1="212" y1="98" x2="252" y2="98" stroke="#8AB8DC" stroke-width=".8" stroke-dasharray="3 2" opacity=".5"/>
+          <line x1="213" y1="116" x2="251" y2="116" stroke="#8AB8DC" stroke-width=".8" stroke-dasharray="3 2" opacity=".4"/>
+          <line x1="209" y1="62" x2="212" y2="150" stroke="white" stroke-width="3" opacity=".28" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="produk-body">
+        <span class="produk-tag">✦ Pesan Custom</span>
+        <div class="produk-name">Karung & Polybag</div>
+        <p class="produk-desc">Karung plastik anyaman dan polybag PE berbagai ukuran untuk pertanian, pengiriman barang, dan kebutuhan industri kecil.</p>
+      </div>
+    </div>
+
+    <!-- 5. Mika Plastik -->
+    <div class="produk-card fi">
+      <div class="produk-img">
+        <svg viewBox="0 0 300 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Sheets in perspective -->
+          <path d="M40 90 L252 82 L256 96 L44 104 Z" fill="#B8D8F0" stroke="#8AB8DC" stroke-width="1" opacity=".4"/>
+          <path d="M40 72 L252 64 L256 82 L44 90 Z" fill="#C8E4F4" stroke="#8AB8DC" stroke-width="1" opacity=".6"/>
+          <path d="M38 54 L250 46 L254 66 L42 74 Z" fill="#DDF0FF" stroke="#8AB8DC" stroke-width="1" opacity=".8"/>
+          <path d="M36 34 L248 26 L252 50 L40 58 Z" fill="#EEF8FF" stroke="#7AB8E8" stroke-width="1.6"/>
+          <path d="M46 34 L54 58" stroke="white" stroke-width="10" opacity=".38" stroke-linecap="round"/>
+          <path d="M68 32 L74 56" stroke="white" stroke-width="5" opacity=".22" stroke-linecap="round"/>
+          <path d="M100 36 L226 30 L228 48 L104 54 Z" fill="#D4ECFC" opacity=".55"/>
+          <path d="M244 26 L248 50 L232 46 Z" fill="#A8D4F5"/>
+          <!-- Ruler reference at bottom -->
+          <line x1="36" y1="138" x2="262" y2="138" stroke="#8AB8DC" stroke-width="1" opacity=".35"/>
+          <line x1="36" y1="138" x2="36" y2="144" stroke="#8AB8DC" stroke-width="1" opacity=".35"/>
+          <line x1="80" y1="138" x2="80" y2="142" stroke="#8AB8DC" stroke-width="1" opacity=".35"/>
+          <line x1="124" y1="138" x2="124" y2="144" stroke="#8AB8DC" stroke-width="1" opacity=".35"/>
+          <line x1="168" y1="138" x2="168" y2="142" stroke="#8AB8DC" stroke-width="1" opacity=".35"/>
+          <line x1="212" y1="138" x2="212" y2="144" stroke="#8AB8DC" stroke-width="1" opacity=".35"/>
+          <line x1="256" y1="138" x2="256" y2="142" stroke="#8AB8DC" stroke-width="1" opacity=".35"/>
+        </svg>
+      </div>
+      <div class="produk-body">
+        <span class="produk-tag">✦ Stok Tersedia</span>
+        <div class="produk-name">Mika Plastik</div>
+        <p class="produk-desc">Lembaran mika PET transparan dan kaku untuk display produk, kemasan kue, cover buku, dan berbagai keperluan industri kreatif.</p>
+      </div>
+    </div>
+
+    <!-- 6. Styrofoam & Kotak Makanan -->
+    <div class="produk-card fi">
+      <div class="produk-img">
+        <svg viewBox="0 0 300 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Shadow -->
+          <ellipse cx="150" cy="164" rx="82" ry="7" fill="#E0D8C8" opacity=".45"/>
+          <!-- Bottom of box -->
+          <path d="M56 98 L80 84 L220 84 L244 98 L244 150 L220 164 L80 164 L56 150 Z" fill="#F4F0E8" stroke="#C8BEA8" stroke-width="1.5"/>
+          <path d="M56 150 L80 164 L220 164 L244 150" fill="#DDD8CC" stroke="#C8BEA8" stroke-width="1"/>
+          <!-- Lid open -->
+          <path d="M60 96 L82 72 L218 72 L240 96 L220 84 L80 84 Z" fill="#FAFAF5" stroke="#C8BEA8" stroke-width="1.5"/>
+          <path d="M82 58 L218 58 L240 96 L82 72 Z" fill="#FAFAF5" stroke="#C8BEA8" stroke-width="1.5"/>
+          <path d="M82 58 L60 96 L82 72 Z" fill="#EDEAE0" stroke="#C8BEA8" stroke-width="1"/>
+          <line x1="60" y1="96" x2="240" y2="96" stroke="#B0A890" stroke-width="1.5"/>
+          <!-- Food suggestion inside -->
+          <ellipse cx="150" cy="124" rx="52" ry="13" fill="#F5E8D0" stroke="#D4B898" stroke-width="1" opacity=".8"/>
+          <rect x="104" y="116" width="20" height="16" rx="3" fill="#E8C87A" opacity=".55"/>
+          <rect x="130" y="113" width="16" height="19" rx="3" fill="#D4A060" opacity=".55"/>
+          <circle cx="166" cy="125" r="9" fill="#C87050" opacity=".45"/>
+          <rect x="96" y="62" width="108" height="5" rx="2" fill="#E8E4D8" opacity=".6"/>
+          <rect x="114" y="74" width="72" height="14" rx="2" fill="#E0DCCE" opacity=".5"/>
+          <line x1="66" y1="100" x2="68" y2="148" stroke="white" stroke-width="4" opacity=".28" stroke-linecap="round"/>
+        </svg>
+      </div>
+      <div class="produk-body">
+        <span class="produk-tag">✦ Grosir Tersedia</span>
+        <div class="produk-name">Styrofoam & Kotak Makanan</div>
+        <p class="produk-desc">Kotak makanan styrofoam dan wadah plastik sekali pakai untuk katering, warung makan, kantin, dan usaha kuliner lainnya.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- KEUNGGULAN -->
+<section id="keunggulan">
+  <div class="keung-layout">
+    <div>
+      <p class="s-eyebrow fi">Mengapa kami</p>
+      <h2 class="s-title fi">Mitra <em>Terpercaya</em> Kebutuhan Plastik Anda</h2>
+      <div class="keung-list">
+        <div class="keung-item fi">
+          <div class="keung-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 2L3 7l9 5 9-5-9-5zM3 17l9 5 9-5M3 12l9 5 9-5"/></svg>
+          </div>
+          <div class="keung-text">
+            <h3>Produk Lengkap Satu Tempat</h3>
+            <p>Dari kemasan, foil, polybag, mika, gelas plastik hingga styrofoam — semua tersedia tanpa perlu cari ke tempat lain.</p>
+          </div>
+        </div>
+        <div class="keung-item fi">
+          <div class="keung-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <div class="keung-text">
+            <h3>Buka Senin–Sabtu, 08.00–18.00</h3>
+            <p>Jam operasional panjang agar pelanggan bisa berbelanja atau mengambil pesanan sesuai jadwal usaha mereka.</p>
+          </div>
+        </div>
+        <div class="keung-item fi">
+          <div class="keung-icon">
+            <svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div class="keung-text">
+            <h3>Melayani Grosir & Eceran</h3>
+            <p>Fleksibel untuk semua skala — dari pembeli perorangan hingga pelanggan grosir usaha menengah di Sukabumi dan sekitarnya.</p>
+          </div>
+        </div>
+        <div class="keung-item fi">
+          <div class="keung-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div class="keung-text">
+            <h3>Lokasi Strategis di Sukabumi</h3>
+            <p>Berada di Limusnunggal, Cibeureum — mudah dijangkau dari pusat kota dan kawasan perdagangan Sukabumi.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="keung-visual fi">
+      <div class="keung-visual-title">Dipercaya Pelanggan Sukabumi</div>
+      <div class="keung-visual-sub">Berdasarkan ulasan pelanggan pada platform Google Maps dan direktori bisnis.</div>
+      <div class="keung-stat">
+        <div class="keung-stat-num">4.6</div>
+        <div class="keung-stat-lbl">Rating rata-rata dari<br>puluhan ulasan pelanggan</div>
+      </div>
+      <div class="keung-stat">
+        <div class="keung-stat-num">6+</div>
+        <div class="keung-stat-lbl">Kategori produk plastik<br>yang tersedia</div>
+      </div>
+      <div class="keung-stat">
+        <div class="keung-stat-num">B2B</div>
+        <div class="keung-stat-lbl">Melayani toko, usaha F&B,<br>dan industri kecil</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TENTANG -->
+<section id="tentang">
+  <p class="s-eyebrow fi">Tentang kami</p>
+  <h2 class="s-title fi" style="max-width:640px">CV. Kawanua Plastik —<br>Supplier Lokal <em>Sukabumi</em></h2>
+  <div class="tentang-layout">
+    <div>
+      <p class="tentang-body fi">
+        CV. Kawanua Plastik adalah usaha perdagangan dan pemasok produk plastik yang berlokasi di <strong>Limusnunggal, Kecamatan Cibeureum, Kota Sukabumi, Jawa Barat</strong>.<br><br>
+        Kami melayani kebutuhan plastik kemasan dan perlengkapan plastik untuk segmen <strong>toko, usaha makanan dan minuman, industri kecil</strong>, serta pelanggan grosir maupun eceran di wilayah Sukabumi dan sekitarnya.<br><br>
+        Dengan rating <strong>4,6/5</strong> dari puluhan ulasan pelanggan, kami berkomitmen memberikan produk berkualitas dan pelayanan yang memuaskan untuk setiap kebutuhan usaha Anda.
+      </p>
+    </div>
+    <div class="tentang-detail fi">
+      <div class="tentang-row">
+        <div class="tentang-row-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div>
+          <div class="tentang-row-label">Alamat</div>
+          <div class="tentang-row-val">Limusnunggal, Kec. Cibeureum,<br>Kota Sukabumi, Jawa Barat 43165</div>
+        </div>
+      </div>
+      <div class="tentang-row">
+        <div class="tentang-row-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.59a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16z"/></svg>
+        </div>
+        <div>
+          <div class="tentang-row-label">Telepon</div>
+          <div class="tentang-row-val"><a href="tel:0266234643" style="color:white">(0266) 234643</a></div>
+        </div>
+      </div>
+      <div class="tentang-row">
+        <div class="tentang-row-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <div>
+          <div class="tentang-row-label">Jam Operasional</div>
+          <div class="tentang-row-val">Senin–Sabtu: 08.00–18.00 WIB<br><span style="color:rgba(255,255,255,.4);font-size:.8rem">Minggu: Tutup</span></div>
+        </div>
+      </div>
+      <div class="tentang-row">
+        <div class="tentang-row-icon">
+          <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <div>
+          <div class="tentang-row-label">Rating</div>
+          <div class="tentang-row-val">4,6 / 5 — dari puluhan ulasan</div>
+        </div>
+      </div>
+      <div class="tentang-row">
+        <div class="tentang-row-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <div>
+          <div class="tentang-row-label">Kategori Usaha</div>
+          <div class="tentang-row-val">Supplier & Grosir Produk Plastik</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KONTAK -->
+<section id="kontak">
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:2rem">
+    <div>
+      <p class="s-eyebrow fi">Hubungi kami</p>
+      <h2 class="s-title fi">Siap Melayani <em>Kebutuhan</em><br>Plastik Anda</h2>
+    </div>
+  </div>
+  <div class="kontak-layout">
+    <div>
+      <p class="kontak-info-sub fi">Kunjungi langsung toko kami atau hubungi untuk informasi produk, cek stok, dan penawaran harga terbaik.</p>
+      <div class="kontak-det fi">
+        <div class="kontak-det-item">
+          <div class="kontak-det-icon">
+            <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <div class="kontak-det-label">Alamat</div>
+            <div class="kontak-det-val">Limusnunggal, Kec. Cibeureum,<br>Kota Sukabumi, Jawa Barat 43165</div>
+          </div>
+        </div>
+        <div class="kontak-det-item">
+          <div class="kontak-det-icon">
+            <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.38 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.59a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21.73 16z"/></svg>
+          </div>
+          <div>
+            <div class="kontak-det-label">Telepon</div>
+            <div class="kontak-det-val"><a href="tel:0266234643">(0266) 234643</a></div>
+          </div>
+        </div>
+        <div class="kontak-det-item">
+          <div class="kontak-det-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+          </div>
+          <div>
+            <div class="kontak-det-label">Jam Operasional</div>
+            <div class="kontak-det-val">Senin–Sabtu: 08.00–18.00 WIB<br><span style="color:#9CA3AF;font-size:.8rem">Minggu: Tutup</span></div>
+          </div>
+        </div>
+        <div class="kontak-det-item">
+          <div class="kontak-det-icon">
+            <svg viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <div>
+            <div class="kontak-det-label">Rating Pelanggan</div>
+            <div class="kontak-det-val">4,6 / 5 ★★★★★ dari puluhan ulasan</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="kontak-form-box fi">
+      <div class="form-row">
+        <div class="form-group">
+          <label>Nama / Usaha</label>
+          <input type="text" id="nama" placeholder="Warung Ibu Sari / CV Maju">
+        </div>
+        <div class="form-group">
+          <label>No. Telepon / WA</label>
+          <input type="tel" id="telepon" placeholder="0812-xxxx-xxxx">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Produk yang Dibutuhkan</label>
+        <select id="kategori">
+          <option value="">— Pilih Produk —</option>
+          <option>Plastik Kemasan</option>
+          <option>Foil & Pouch</option>
+          <option>Gelas Plastik</option>
+          <option>Karung & Polybag</option>
+          <option>Mika Plastik</option>
+          <option>Styrofoam & Kotak Makanan</option>
+          <option>Lainnya / Campuran</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Detail Kebutuhan</label>
+        <textarea id="pesan" placeholder="Ceritakan kebutuhan Anda — jenis, ukuran, estimasi jumlah..."></textarea>
+      </div>
+      <button class="btn-submit" onclick="kirimPesan()">Kirim via WhatsApp →</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">CV. Kawanua <span>Plastik</span></div>
+  <span>© 2025 CV. Kawanua Plastik · Limusnunggal, Cibeureum, Sukabumi 43165</span>
+  <a href="#beranda">↑ Kembali ke atas</a>
+</footer>
+
+<script>
+function kirimPesan(){
+  const nama=document.getElementById('nama').value.trim();
+  const tel=document.getElementById('telepon').value.trim();
+  const kat=document.getElementById('kategori').value;
+  const pesan=document.getElementById('pesan').value.trim();
+  if(!nama||!tel){alert('Mohon isi nama dan nomor telepon Anda.');return;}
+  const txt=`Halo CV. Kawanua Plastik,\n\nSaya ingin menanyakan produk plastik.\n\n*Nama/Usaha:* ${nama}\n*No. Telepon:* ${tel}\n*Produk:* ${kat||'Belum dipilih'}\n*Keterangan:* ${pesan||'-'}\n\nMohon informasinya. Terima kasih!`;
+  window.open(`https://wa.me/62266234643?text=${encodeURIComponent(txt)}`,'_blank');
+}
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target);}});
+},{threshold:.08,rootMargin:'0px 0px -24px 0px'});
+document.querySelectorAll('.fi').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
